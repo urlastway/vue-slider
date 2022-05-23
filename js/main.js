@@ -28,23 +28,26 @@ const app = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
-        ]
+        ],
     },
 
     methods: {
         NextImg(){
-            if(this.currentIndex === 4){
+            if(this.currentIndex === this.images.length - 1 ){
                 this.currentIndex = 0;
             } else {
                 this.currentIndex++;
             }
         },
         PrevImg(){
-            if(this.currentIndex === 0){
+            if(this.currentIndex === this.images.length - 1){
                 this.currentIndex = 4;
             } else {
                 this.currentIndex--;
             }
+        },
+        SelectedIMG(){
+            this.currentIndex = 3;
         }
     },
 });
